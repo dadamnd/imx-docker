@@ -25,7 +25,7 @@
 . ./env.sh
 
 # run the docker image
-docker run -it --rm \
+docker run -it --rm --cpuset-cpus="0-9" -m 10g\
     --volume ${HOME}:${HOME} \
     --volume ${DOCKER_WORKDIR}:${DOCKER_WORKDIR} \
     --volume $(pwd)/${IMX_RELEASE}:${DOCKER_WORKDIR}/${IMX_RELEASE} \
